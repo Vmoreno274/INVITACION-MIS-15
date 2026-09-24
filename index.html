@@ -10,36 +10,37 @@
 </head>
 <body>
 
-  <!-- Audio de fondo -->
+  <!-- Música de fondo -->
   <audio loop id="musica">
     <source src="musica.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Pantalla de Bienvenida / Sobre -->
+  <!-- Pantalla de Bienvenida / Sobre Estilo Cortina -->
   <div id="overlay" class="overlay">
     <div class="sobre-box">
-      <h1 class="titulo-sobre">Mis 15 Años</h1>
+      <p class="subtitulo-sobre">TE INVITAMOS A CELEBRAR LOS</p>
+      <h1 class="titulo-sobre">15 Años</h1>
       <h2 class="nombre-sobre">Nicole</h2>
-      <button onclick="abrirInvitacion()" class="btn-abrir">✨ Abrir Invitación ✨</button>
+      <button onclick="abrirInvitacion()" class="btn-abrir">✨ ABRIR INVITACIÓN ✨</button>
     </div>
   </div>
 
-  <!-- Contenido Principal -->
+  <!-- Contenedor Principal -->
   <div class="main-container">
 
-    <!-- Portada Principal -->
+    <!-- Tarjeta de Portada -->
     <div class="seccion-portada">
       <img src="imagenprimera.jpg" alt="Nicole" class="foto-portada">
     </div>
 
-    <!-- Frase -->
+    <!-- Frase Destacada -->
     <div class="seccion frase-box">
-      <p>✨ Una noche mágica me espera… y quiero que seas parte, para compartir juntos momentos inolvidables que quedarán para siempre en mi corazón ✨</p>
+      <p class="frase-texto">✨ Una noche mágica me espera… y quiero que seas parte, para compartir juntos momentos inolvidables que quedarán para siempre en mi corazón ✨</p>
     </div>
 
-    <!-- Contador en Bloques -->
+    <!-- Contador en Bloques Dorados -->
     <div class="seccion contador-seccion">
-      <h3>FALTAN:</h3>
+      <h3 class="gold-title">FALTAN:</h3>
       <div id="cuenta-regresiva" class="clock-container">
         <div class="time-block"><span id="dias">00</span><small>Días</small></div>
         <div class="time-block"><span id="horas">00</span><small>Hs</small></div>
@@ -50,33 +51,43 @@
 
     <!-- Fecha y Lugar -->
     <div class="seccion info-evento">
-      <div class="icon-box"><i class="fa-regular fa-calendar-check"></i></div>
-      <h2>15 NOVIEMBRE 2026</h2>
-      <p class="hora">21:00 HS</p>
-      <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
-      <p class="direccion">Catamarca 1540</p>
-      <a href="https://www.google.com/maps/place/Catamarca+1540,+C1246+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.6280964,-58.4048353,17z/data=!3m1!4b1!4m6!3m5!1s0x95bccb1c771a4bbf:0x97a075f8cc40fa1d!8m2!3d-34.6281008!4d-58.402255!16s%2Fg%2F11cpnz_938?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn-gold">VER UBICACIÓN</a>
+      <div class="icon-circle"><i class="fa-regular fa-calendar-check"></i></div>
+      <h2 class="fecha-title">15 NOVIEMBRE 2026</h2>
+      <p class="hora-text">21:00 HS</p>
+      
+      <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+      <p class="direccion-text">Catamarca 1540</p>
+      <a href="https://www.google.com/maps/place/Catamarca+1540,+C1246+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/" target="_blank" class="btn-gold">VER UBICACIÓN</a>
     </div>
 
-    <!-- Galería Vertical -->
+    <!-- Galería Interactiva con Zoom -->
     <div class="seccion galeria">
-      <img src="foto 1.jpg" alt="Foto 1">
-       <img src="foto 2.jpg" alt="Foto 2">
-        <img src="foto 3.jpg" alt="Foto 3">
-         <img src="foto 4.jpg" alt="Foto 4">
-          <img src="foto 5.jpg" alt="Foto 5">
-           <img src="foto 6.jpg" alt="Foto 6">
-            <img src="foto 7.jpg" alt="Foto 7">
-             <img src="foto 8.jpg" alt="Foto 8">
-              <img src="foto 9.jpg" alt="Foto 9">
-               <img src="foto 10.jpg" alt="Foto 10">
+      <h3 class="gold-title">GALERÍA</h3>
+      <div class="galeria-grid">
+        <img src="foto 1.jpg" alt="Foto 1" onclick="ampliarImagen(this.src)">
+        <img src="foto 2.jpg" alt="Foto 2" onclick="ampliarImagen(this.src)">
+        <img src="foto 3.jpg" alt="Foto 3" onclick="ampliarImagen(this.src)">
+        <img src="foto 4.jpg" alt="Foto 4" onclick="ampliarImagen(this.src)">
+        <img src="foto 5.jpg" alt="Foto 5" onclick="ampliarImagen(this.src)">
+        <img src="foto 6.jpg" alt="Foto 6" onclick="ampliarImagen(this.src)">
+        <img src="foto 7.jpg" alt="Foto 7" onclick="ampliarImagen(this.src)">
+        <img src="foto 8.jpg" alt="Foto 8" onclick="ampliarImagen(this.src)">
+        <img src="foto 9.jpg" alt="Foto 9" onclick="ampliarImagen(this.src)">
+        <img src="foto 10.jpg" alt="Foto 10" onclick="ampliarImagen(this.src)">
+      </div>
+    </div>
+
+    <!-- Modal para ver foto ampliada -->
+    <div id="modal-foto" class="modal-foto" onclick="cerrarModal()">
+      <span class="cerrar-modal">&times;</span>
+      <img id="img-modal-src" src="" alt="Foto Ampliada">
     </div>
 
     <!-- Datos de Regalos -->
     <div class="seccion regalos-box">
-      <div class="icon-box"><i class="fa-solid fa-gift"></i></div>
-      <h2>REGALOS</h2>
-      <p>El mejor regalo es tu presencia, pero si deseás obsequiarme algo, podés hacerlo a través de mi alias de Mercado Pago 💫</p>
+      <div class="icon-circle"><i class="fa-solid fa-gift"></i></div>
+      <h2 class="gold-title">REGALOS</h2>
+      <p class="regalos-p">El mejor regalo es tu presencia, pero si deseás obsequiarme algo, podés hacerlo a través de mi alias de Mercado Pago 💫</p>
       <div class="alias-card">
         <p><strong>Alias:</strong> Nicole.aguiar.mis.15</p>
         <p><strong>Nombre:</strong> Nicole-Aguiar-Ot</p>
@@ -84,24 +95,30 @@
       </div>
     </div>
 
-    <!-- Confirmación RSVP -->
+    <!-- Confirmación RSVP con Nombre y Acompañantes -->
     <div class="seccion rsvp-box">
+      <div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
+      <h2 class="gold-title">CONFIRMACIÓN</h2>
       <p>✨ Nos encantaría contar con tu presencia ✨</p>
-      <a href="https://wa.me/541156167548?text=Hola%20confirmo%20mi%20asistencia%20a%20los%2015%20de%20Nicole%20✨" target="_blank" class="btn-wsp">
-        <i class="fa-brands fa-whatsapp"></i> CONFIRMAR ASISTENCIA
-      </a>
-</div> <!-- Cierre del div anterior -->
+      <div class="rsvp-form">
+        <input type="text" id="nombre-asistente" placeholder="Tu Nombre y Apellido" class="input-rsvp">
+        <select id="asistencia-opcion" class="input-rsvp">
+          <option value="Confirmo mi asistencia">Sí, asistiré</option>
+          <option value="Lamentablemente no podré asistir">No podré asistir</option>
+        </select>
+        <button onclick="enviarWhatsApp()" class="btn-wsp">
+          CONFIRMAR POR WHATSAPP
+        </button>
+      </div>
+    </div>
 
-  </div> <!-- Cierre de main-container -->
+  </div>
 
-  <!-- Botón Flotante para Controlar la Música -->
+  <!-- Botón Flotante de Música -->
   <button onclick="toggleMusica()" class="btn-musica">
     <i id="icono-musica" class="fa-solid fa-music"></i>
   </button>
 
-  <script src="script.js"></script>
-</body>
-</html>
   <script src="script.js"></script>
 </body>
 </html>
