@@ -184,3 +184,32 @@ h2 {
   font-size: 0.85rem;
   line-height: 1.8;
 }
+/* Tarjeta central elegante sobre el fondo de flores */
+.main-container {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(253, 251, 247, 0.95);
+  min-height: 100vh;
+  padding: 25px 18px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón Flotante para la Música */
+.btn-musica {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #c59b27;
+  color: #ffffff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
