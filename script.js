@@ -1,7 +1,8 @@
 function abrirInvitacion() {
-  document.getElementById("overlay").style.opacity = "0";
+  const overlay = document.getElementById("overlay");
+  overlay.style.transform = "translateY(-100%)";
   setTimeout(() => {
-    document.getElementById("overlay").style.display = "none";
+    overlay.style.display = "none";
   }, 800);
   
   var audio = document.getElementById("musica");
@@ -27,7 +28,31 @@ function toggleMusica() {
   }
 }
 
-// Configuración de fecha: (Año 2026, Mes 10=Noviembre, Día 15, Hora 21, Minutos 0, Segundos 0)
+/* Ampliar Fotos en Galería */
+function ampliarImagen(src) {
+  document.getElementById("img-modal-src").src = src;
+  document.getElementById("modal-foto").style.display = "flex";
+}
+
+function cerrarModal() {
+  document.getElementById("modal-foto").style.display = "none";
+}
+
+/* Enviar Confirmación por WhatsApp */
+function enviarWhatsApp() {
+  const nombre = document.getElementById("nombre-asistente").value;
+  const opcion = document.getElementById("asistencia-opcion").value;
+  
+  if (!nombre.trim()) {
+    alert("Por favor, ingresá tu nombre antes de confirmar.");
+    return;
+  }
+  
+  const mensaje = encodeURIComponent(`Hola! Soy ${nombre}. ${opcion} a los 15 de Nicole ✨`);
+  window.open(`https://wa.me/541156167548?text=${mensaje}`, '_blank');
+}
+
+/* Contador Regresivo al 15 Noviembre 2026 a las 21:00 hs */
 const fechaEvento = new Date(2026, 10, 15, 21, 0, 0).getTime();
 
 setInterval(function() {
