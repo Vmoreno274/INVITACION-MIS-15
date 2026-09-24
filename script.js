@@ -1,58 +1,47 @@
 function abrirInvitacion() {
   const overlay = document.getElementById("overlay");
-  overlay.style.transform = "translateY(-100%)";
+  overlay.style.opacity = "0";
   setTimeout(() => {
     overlay.style.display = "none";
   }, 800);
   
   var audio = document.getElementById("musica");
   if (audio) {
-    audio.play().then(() => {
-      document.getElementById("icono-musica").className = "fa-solid fa-pause";
-    }).catch(function(error) {
-      console.log("El navegador requiere toque previo para iniciar el audio.");
+    audio.play().catch(function(error) {
+      console.log("El navegador bloqueó la reproducción automática.");
     });
   }
 }
 
 function toggleMusica() {
   var audio = document.getElementById("musica");
-  var icono = document.getElementById("icono-musica");
-  
   if (audio.paused) {
     audio.play();
-    icono.className = "fa-solid fa-pause";
   } else {
     audio.pause();
-    icono.className = "fa-solid fa-music";
   }
 }
 
-/* Ampliar Fotos en Galería */
-function ampliarImagen(src) {
-  document.getElementById("img-modal-src").src = src;
-  document.getElementById("modal-foto").style.display = "flex";
-}
+/* Generador de Lluvia de Estrellas CAYENDO desde arriba */
+function crearEstrellas() {
+  const container = document.getElementById('estrellas-container');
+  if (!container) return;
 
-function cerrarModal() {
-  document.getElementById("modal-foto").style.display = "none";
-}
-
-/* Enviar Confirmación por WhatsApp */
-function enviarWhatsApp() {
-  const nombre = document.getElementById("nombre-asistente").value;
-  const opcion = document.getElementById("asistencia-opcion").value;
-  
-  if (!nombre.trim()) {
-    alert("Por favor, ingresá tu nombre antes de confirmar.");
-    return;
+  for (let i = 0; i < 30; i++) {
+    const estrella = document.createElement('div');
+    estrella.className = 'estrella';
+    estrella.innerText = '✨';
+    estrella.style.left = Math.random() * 100 + 'vw';
+    estrella.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    estrella.style.animationDelay = Math.random() * 5 + 's';
+    estrella.style.fontSize = (Math.random() * 10 + 10) + 'px';
+    container.appendChild(estrella);
   }
-  
-  const mensaje = encodeURIComponent(`Hola! Soy ${nombre}. ${opcion} a los 15 de Nicole ✨`);
-  window.open(`https://wa.me/541156167548?text=${mensaje}`, '_blank');
 }
 
-/* Contador Regresivo al 15 Noviembre 2026 a las 21:00 hs */
+document.addEventListener("DOMContentLoaded", crearEstrellas);
+
+/* Configuración del Reloj: 15 Noviembre 2026 - 21:00 hs */
 const fechaEvento = new Date(2026, 10, 15, 21, 0, 0).getTime();
 
 setInterval(function() {
