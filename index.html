@@ -6,11 +6,12 @@
   <title>Mis 15 Nicole</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
   <!-- Música de fondo -->
-  <audio loop id="musica">
+  <audio loop id="musica" preload="auto">
     <source src="musica.mp3" type="audio/mpeg">
   </audio>
 
@@ -21,24 +22,24 @@
   <div id="overlay" class="overlay">
     <div class="sobre-box">
       <img src="imagenprimera.jpg" alt="Mis 15 Nicole" class="foto-portada-sobre">
-      <button onclick="abrirInvitacion()" class="btn-abrir">✨ Ver Invitación ✨</button>
+      <button onclick="abrirInvitacion()" class="btn-abrir">✨ Toca para ingresar ✨</button>
     </div>
   </div>
 
   <!-- Contenido Principal -->
   <div class="main-container">
 
-    <!-- Portada -->
+    <!-- Portada Principal -->
     <div class="seccion-portada">
       <img src="imagenprimera.jpg" alt="Mis 15 Nicole" class="foto-portada">
     </div>
 
     <!-- Frase Principal -->
     <div class="seccion frase-box">
-      <p class="frase-texto">✨ Una noche mágica me espera... y quiero que seas parte, para compartir juntos momentos inolvidables que quedarán para siempre en mi corazón ✨</p>
+      <p class="frase-texto"><span class="estrella-inline">✦</span> Una noche mágica me espera... y quiero que seas parte, para compartir juntos momentos inolvidables que quedarán para siempre en mi corazón <span class="estrella-inline">✦</span></p>
     </div>
 
-    <!-- Contador con Espaciado Generoso -->
+    <!-- Contador con Espacio Holgado -->
     <div class="seccion contador-seccion">
       <h3 class="titulo-faltan">Faltan:</h3>
       <div id="cuenta-regresiva" class="clock-container">
@@ -49,9 +50,9 @@
       </div>
     </div>
 
-    <!-- Fecha y Hora en Una Sola Línea Elegante -->
+    <!-- Fecha y Hora -->
     <div class="seccion info-evento">
-      <h2 class="fecha-linea">✨ 15 Noviembre 2026 - 21:00 hs ✨</h2>
+      <h2 class="fecha-linea"><span class="estrella-inline">✦</span> 15 Noviembre 2026 - 21:00 hs <span class="estrella-inline">✦</span></h2>
       <p class="direccion-texto">Catamarca 1540</p>
       <a href="https://www.google.com/maps/place/Catamarca+1540,+C1246+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/" target="_blank" class="btn-ubicacion">Ver ubicación</a>
     </div>
@@ -85,7 +86,7 @@
 
     <!-- Confirmación RSVP -->
     <div class="seccion rsvp-box">
-      <p class="frase-texto">✨ Nos encantaría contar con tu presencia ✨</p>
+      <p class="frase-texto"><span class="estrella-inline">✦</span> Nos encantaría contar con tu presencia <span class="estrella-inline">✦</span></p>
       <a href="https://wa.me/541156167548?text=Hola%20confirmo%20mi%20asistencia%20a%20los%2015%20de%20Nicole%20✨" target="_blank" class="btn-wsp">
         Confirmar asistencia
       </a>
@@ -95,7 +96,7 @@
 
   <!-- Botón Flotante Música -->
   <button onclick="toggleMusica()" class="btn-musica">
-    <i id="icono-musica" class="fa-solid fa-music">🎵</i>
+    <i id="icono-musica" class="fa-solid fa-music"></i>
   </button>
 
   <script src="script.js"></script>
