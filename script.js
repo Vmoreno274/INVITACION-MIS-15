@@ -6,16 +6,29 @@ function abrirInvitacion() {
   
   var audio = document.getElementById("musica");
   if (audio) {
-    audio.play().catch(function(error) {
-      console.log("Auto-play prevenido por el navegador.");
+    audio.play().then(() => {
+      document.getElementById("icono-musica").className = "fa-solid fa-pause";
+    }).catch(function(error) {
+      console.log("El navegador requiere toque previo para iniciar el audio.");
     });
   }
 }
 
-// La fecha se configura así: (Año, Mes-1, Día, Hora, Minutos, Segundos)
-// En JavaScript Noviembre es el mes 10 (porque se cuenta desde 0=Enero hasta 11=Diciembre).
-// Año 2026, Mes 10 (Noviembre), Día 15, Hora 21, Minutos 0
-const fechaEvento = new Date(2026, 10, 15, 22, 0, 0).getTime();
+function toggleMusica() {
+  var audio = document.getElementById("musica");
+  var icono = document.getElementById("icono-musica");
+  
+  if (audio.paused) {
+    audio.play();
+    icono.className = "fa-solid fa-pause";
+  } else {
+    audio.pause();
+    icono.className = "fa-solid fa-music";
+  }
+}
+
+// Configuración de fecha: (Año 2026, Mes 10=Noviembre, Día 15, Hora 21, Minutos 0, Segundos 0)
+const fechaEvento = new Date(2026, 10, 15, 21, 0, 0).getTime();
 
 setInterval(function() {
   const ahora = new Date().getTime();
