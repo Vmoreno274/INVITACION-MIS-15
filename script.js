@@ -8,7 +8,7 @@ function abrirInvitacion() {
   var audio = document.getElementById("musica");
   if (audio) {
     audio.play().catch(function(error) {
-      console.log("El navegador bloqueó la reproducción automática.");
+      console.log("El navegador requiere interacción previa.");
     });
   }
 }
@@ -22,18 +22,18 @@ function toggleMusica() {
   }
 }
 
-/* Generador de Lluvia de Estrellas CAYENDO desde arriba */
+/* Lluvia de estrellas repartida al 100% del ancho */
 function crearEstrellas() {
   const container = document.getElementById('estrellas-container');
   if (!container) return;
 
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 35; i++) {
     const estrella = document.createElement('div');
     estrella.className = 'estrella';
     estrella.innerText = '✨';
-    estrella.style.left = Math.random() * 100 + 'vw';
-    estrella.style.animationDuration = (Math.random() * 3 + 2) + 's';
-    estrella.style.animationDelay = Math.random() * 5 + 's';
+    estrella.style.left = Math.random() * 98 + 'vw';
+    estrella.style.animationDuration = (Math.random() * 3 + 2.5) + 's';
+    estrella.style.animationDelay = (Math.random() * 5) + 's';
     estrella.style.fontSize = (Math.random() * 10 + 10) + 'px';
     container.appendChild(estrella);
   }
@@ -41,7 +41,7 @@ function crearEstrellas() {
 
 document.addEventListener("DOMContentLoaded", crearEstrellas);
 
-/* Configuración del Reloj: 15 Noviembre 2026 - 21:00 hs */
+/* Reloj: 15 Noviembre 2026 - 21:00 hs */
 const fechaEvento = new Date(2026, 10, 15, 21, 0, 0).getTime();
 
 setInterval(function() {
