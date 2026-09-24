@@ -34,13 +34,14 @@ body::before {
 
 /* Contenedor central con ESPACIADO ESPACIOSO entre secciones */
 /* Contenedor principal que queda por encima de la lluvia de estrellas */
+/* Contenedor adaptativo: se expande en PC y se ajusta en celulares */
 .main-container {
   width: 100%;
-  max-width: 430px;
-  padding: 30px 18px 80px 18px;
+  max-width: 680px; /* Expande las fotos y textos en pantallas de PC */
+  padding: 40px 20px 90px 20px;
   text-align: center;
   position: relative;
-  z-index: 10; /* Queda por delante de las estrellas */
+  z-index: 10;
   background: transparent !important;
 }
 
@@ -99,12 +100,13 @@ body::before {
 }
 
 /* Contador en Cajas Neón */
+/* Reloj expandido */
 .clock-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  max-width: 330px;
-  margin: 20px auto;
+  gap: 18px;
+  max-width: 420px; /* Permite que los bloques respiren mejor */
+  margin: 25px auto;
 }
 
 .time-block {
@@ -161,10 +163,14 @@ body::before {
   box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
+/* Fotos de la galería adaptables a pantallas grandes */
 .galeria-vertical img {
   width: 100%;
+  max-width: 600px;
+  height: auto;
   border-radius: 20px;
-  margin-bottom: 25px;
+  margin: 0 auto 35px auto;
+  display: block;
   box-shadow: 0 8px 25px rgba(0,0,0,0.7);
 }
 
@@ -219,7 +225,7 @@ body::before {
   width: 100vw; 
   height: 100vh;
   pointer-events: none;
-  z-index: 1; /* Se coloca detrás del texto y fotos */
+  z-index: 10; /* Se coloca detrás del texto y fotos */
   overflow: hidden;
 }
 
