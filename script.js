@@ -12,7 +12,9 @@ function abrirInvitacion() {
   }
 }
 
-const fechaEvento = new Date(2026, 4, 16, 21, 0, 0).getTime();
+// La fecha se configura así: (Año, Mes-1, Día, Hora, Minutos, Segundos)
+// En JavaScript Noviembre es el mes 10 (porque se cuenta desde 0=Enero hasta 11=Diciembre).
+const fechaEvento = new Date(2026, 11, 15, 21, 0, 0).getTime();
 
 setInterval(function() {
   const ahora = new Date().getTime();
