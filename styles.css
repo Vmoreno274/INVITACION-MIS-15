@@ -67,10 +67,12 @@ body {
 .main-container {
   width: 100%;
   max-width: 450px;
-  background: #fdfbf7;
+  /* Fondo con la imagen de flores azules y texto claro */
+  background: url('fondo.jpg') no-repeat center top / cover;
+  color: #ffffff; 
   min-height: 100vh;
   padding: 20px 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
 }
 
 .seccion {
