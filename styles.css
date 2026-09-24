@@ -4,82 +4,109 @@
   padding: 0;
 }
 
+/* Fondo general de la página con degradado elegante */
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #fcf8f6;
-  color: #4a4a4a;
-  text-align: center;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  background-attachment: fixed;
+  color: #5a5a5a;
+  display: flex;
+  justify-content: center;
   padding: 20px 10px;
 }
 
-.container {
-  max-width: 500px;
-  margin: 0 auto;
+/* Contenedor central (efecto tarjeta) */
+.tarjeta {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 25px 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
 }
 
 .seccion {
-  margin-bottom: 35px;
-  padding: 20px;
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
 }
 
-.img-portada {
+.img-destacada {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 15px;
+}
+
+.frase {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  font-style: italic;
 }
 
 h2 {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.2rem;
-  color: #b8860b; /* Tono dorado */
-  margin-bottom: 10px;
+  font-size: 2.3rem;
+  color: #c59b27; /* Tono Dorado Elegante */
+  margin-bottom: 8px;
 }
 
-h3 {
+.direccion {
+  font-size: 1.2rem;
   font-weight: 500;
-  margin-bottom: 15px;
+  color: #444;
+  margin-bottom: 12px;
 }
 
-/* Reloj digital */
-.clock {
-  font-size: 1.5rem;
+/* Reloj */
+.reloj {
+  font-size: 1.4rem;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   color: #333;
-  margin-top: 10px;
+  background: #fdfaf6;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #f0e6d2;
 }
 
 /* Botones */
-.btn {
+.btn-ubicacion {
   display: inline-block;
-  padding: 12px 25px;
-  background-color: #b8860b;
-  color: white;
+  padding: 10px 22px;
+  background-color: #c59b27;
+  color: #ffffff;
   text-decoration: none;
-  border-radius: 25px;
-  font-weight: 500;
-  transition: 0.3s;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .btn-whatsapp {
+  display: inline-block;
+  padding: 12px 25px;
   background-color: #25d366;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-/* Galería de Fotos */
+/* Galería */
 .galeria img {
   width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
 }
 
-.datos-alias {
-  text-align: left;
-  background: #fdfaf6;
+/* Caja de Regalos */
+.caja-alias {
+  background-color: #fbf9f5;
+  border: 1px dashed #c59b27;
   padding: 15px;
-  border-radius: 8px;
-  margin-top: 10px;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  border-radius: 10px;
+  text-align: left;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
