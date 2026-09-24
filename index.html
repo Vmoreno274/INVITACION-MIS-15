@@ -5,64 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis 15 Isabella</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Música de fondo -->
-  <audio autoplay loop id="musica">
+  <!-- Audio de fondo -->
+  <audio loop id="musica">
     <source src="musica.mp3" type="audio/mpeg">
   </audio>
 
-  <div class="tarjeta">
-    <!-- Imagen de portada -->
-    <div class="seccion">
-      <img src="imagenprimera.jpg" alt="Mis 15 Isabella" class="img-destacada">
+  <!-- Pantalla de Bienvenida / Sobre -->
+  <div id="overlay" class="overlay">
+    <div class="sobre-box">
+      <h1 class="titulo-sobre">Mis 15 Años</h1>
+      <h2 class="nombre-sobre">Isabella</h2>
+      <button onclick="abrirInvitacion()" class="btn-abrir">✨ Abrir Invitación ✨</button>
+    </div>
+  </div>
+
+  <!-- Contenido Principal -->
+  <div class="main-container">
+
+    <!-- Portada Principal -->
+    <div class="seccion-portada">
+      <img src="imagenprimera.jpg" alt="Isabella" class="foto-portada">
     </div>
 
-    <!-- Frase de portada -->
-    <div class="seccion texto-centrado">
-      <p class="frase">✨ Una noche mágica me espera… y quiero que seas parte, para compartir juntos momentos inolvidables que quedarán para siempre en mi corazón ✨</p>
+    <!-- Frase -->
+    <div class="seccion frase-box">
+      <p>✨ Una noche mágica me espera… y quiero que seas parte, para compartir juntos momentos inolvidables que quedarán para siempre en mi corazón ✨</p>
     </div>
 
-    <!-- Contador Regresivo -->
-    <div class="seccion contador-contenedor">
-      <h2>Faltan:</h2>
-      <div id="cuenta-regresiva" class="reloj"></div>
+    <!-- Contador en Bloques -->
+    <div class="seccion contador-seccion">
+      <h3>FALTAN:</h3>
+      <div id="cuenta-regresiva" class="clock-container">
+        <div class="time-block"><span id="dias">00</span><small>Días</small></div>
+        <div class="time-block"><span id="horas">00</span><small>Hs</small></div>
+        <div class="time-block"><span id="minutos">00</span><small>Min</small></div>
+        <div class="time-block"><span id="segundos">00</span><small>Seg</small></div>
+      </div>
     </div>
 
-    <!-- Datos de Fecha y Lugar -->
-    <div class="seccion evento-info">
-      <h2 class="fecha">16 Mayo 2026 - 21:00 hs</h2>
-      <h3 class="direccion">Moreno 839</h3>
-      <a href="https://maps.google.com" target="_blank" class="btn-ubicacion">Ver ubicación</a>
+    <!-- Fecha y Lugar -->
+    <div class="seccion info-evento">
+      <div class="icon-box"><i class="fa-regular fa-calendar-check"></i></div>
+      <h2>16 MAYO 2026</h2>
+      <p class="hora">21:00 HS</p>
+      <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+      <p class="direccion">Moreno 839</p>
+      <a href="https://maps.google.com" target="_blank" class="btn-gold">VER UBICACIÓN</a>
     </div>
 
-    <!-- Galería de fotos -->
+    <!-- Galería Vertical -->
     <div class="seccion galeria">
-      <img src="foto 1.jpeg" alt="Foto">
-      <img src="foto 2.jpeg" alt="Foto">
-      <img src="foto 3.jpeg" alt="Foto">
+      <img src="foto 1.jpeg" alt="Foto 1">
+      <img src="foto 2.jpeg" alt="Foto 2">
+      <img src="foto 3.jpeg" alt="Foto 3">
     </div>
 
-    <!-- Datos Bancarios / Mercado Pago -->
-    <div class="seccion regalos">
-      <h2>🎁 Regalos</h2>
+    <!-- Datos de Regalos -->
+    <div class="seccion regalos-box">
+      <div class="icon-box"><i class="fa-solid fa-gift"></i></div>
+      <h2>REGALOS</h2>
       <p>El mejor regalo es tu presencia, pero si deseás obsequiarme algo, podés hacerlo a través de mi alias de Mercado Pago 💫</p>
-      <div class="caja-alias">
+      <div class="alias-card">
         <p><strong>Alias:</strong> isafernadez.mis.15</p>
         <p><strong>Nombre:</strong> Isabella-Anahi-Fernandez-Millan</p>
         <p><strong>CVU:</strong> 0000003100055991041781</p>
       </div>
     </div>
 
-    <!-- Confirmación de Asistencia -->
-    <div class="seccion rsvp">
+    <!-- Confirmación RSVP -->
+    <div class="seccion rsvp-box">
       <p>✨ Nos encantaría contar con tu presencia ✨</p>
-      <a href="https://wa.me/5492920608922?text=Hola%20confirmo%20mi%20asistencia%20a%20los%2015%20de%20Isabella%20✨" target="_blank" class="btn-whatsapp">
-        Confirmar asistencia
+      <a href="https://wa.me/5492920608922?text=Hola%20confirmo%20mi%20asistencia%20a%20los%2015%20de%20Isabella%20✨" target="_blank" class="btn-wsp">
+        <i class="fa-brands fa-whatsapp"></i> CONFIRMAR ASISTENCIA
       </a>
     </div>
+
   </div>
 
   <script src="script.js"></script>
