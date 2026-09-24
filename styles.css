@@ -6,67 +6,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #0f0f0f;
-  background-image: radial-gradient(#262626 1px, transparent 1px);
-  background-size: 20px 20px;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-}
-
-/* Pantalla de inicio de la invitación */
-.overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(10, 10, 10, 0.95);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.8s ease;
-}
-
-.sobre-box {
-  text-align: center;
-  background: #ffffff;
-  padding: 40px 25px;
-  border-radius: 15px;
-  border: 2px solid #c59b27;
-  max-width: 85%;
-  box-shadow: 0 0 25px rgba(197, 155, 39, 0.3);
-}
-
-.titulo-sobre {
-  font-family: 'Cinzel', serif;
-  font-size: 1.2rem;
-  letter-spacing: 3px;
-  color: #666;
-}
-
-.nombre-sobre {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3.5rem;
-  color: #c59b27;
-  margin: 10px 0 20px;
-}
-
-.btn-abrir {
-  background: #c59b27;
-  color: #fff;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-/* Contenedor central simulando pantalla móvil */
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-image: url('fondo.jpg');
+  background-image: url('Nicole.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -77,6 +17,78 @@ body {
   min-height: 100vh;
 }
 
+/* Pantalla de inicio con sobre traslúcido y rosas de fondo */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(10, 15, 30, 0.85);
+  background-image: url('Nicole.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.sobre-box {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 40px 25px;
+  border-radius: 20px;
+  border: 2px solid #c59b27;
+  max-width: 85%;
+  width: 380px;
+  box-shadow: 0 0 30px rgba(197, 155, 39, 0.4);
+}
+
+.subtitulo-sobre {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: #777;
+}
+
+.titulo-sobre {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 5px;
+}
+
+.nombre-sobre {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  color: #c59b27;
+  margin: 10px 0 20px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.btn-abrir {
+  background: linear-gradient(135deg, #d4af37, #aa7c11);
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(197, 155, 39, 0.4);
+}
+
+/* Tarjeta Central */
+.main-container {
+  width: 100%;
+  max-width: 450px;
+  background: rgba(253, 251, 247, 0.96);
+  min-height: 100vh;
+  padding: 25px 18px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.6);
+}
+
 .seccion {
   margin-bottom: 35px;
   text-align: center;
@@ -84,24 +96,26 @@ body {
 
 .foto-portada {
   width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
-.frase-box p {
+.frase-texto {
   font-style: italic;
   font-size: 0.95rem;
   color: #555;
   line-height: 1.6;
+  padding: 0 10px;
 }
 
-/* Estilo del contador en bloques */
-.contador-seccion h3 {
+.gold-title {
   font-family: 'Cinzel', serif;
   color: #c59b27;
-  margin-bottom: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
 }
 
+/* Reloj */
 .clock-container {
   display: flex;
   justify-content: center;
@@ -111,15 +125,15 @@ body {
 .time-block {
   background: #ffffff;
   border: 1px solid #e2d1a6;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 10px;
-  min-width: 65px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  min-width: 68px;
+  box-shadow: 0 4px 10px rgba(197, 155, 39, 0.15);
 }
 
 .time-block span {
   display: block;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #333;
 }
@@ -130,71 +144,136 @@ body {
   text-transform: uppercase;
 }
 
-/* Botones e Iconos */
-.icon-box {
-  font-size: 1.8rem;
+/* Círculos con íconos */
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fbf6eb;
+  border: 1px solid #c59b27;
   color: #c59b27;
-  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  margin: 0 auto 10px;
 }
 
-h2 {
+.fecha-title {
   font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
   color: #222;
-  font-size: 1.3rem;
-  margin-bottom: 5px;
+}
+
+.hora-text {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.direccion-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 12px;
 }
 
 .btn-gold {
   display: inline-block;
-  margin-top: 12px;
-  background: #c59b27;
+  background: linear-gradient(135deg, #d4af37, #aa7c11);
   color: #fff;
   text-decoration: none;
-  padding: 10px 22px;
+  padding: 10px 24px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: bold;
   letter-spacing: 1px;
 }
 
-.btn-wsp {
-  display: inline-block;
-  background: #25d366;
-  color: #fff;
-  text-decoration: none;
-  padding: 12px 25px;
-  border-radius: 25px;
-  font-weight: bold;
-  margin-top: 10px;
+/* Galería Grid */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 15px;
 }
 
-.galeria img {
+.galeria-grid img {
   width: 100%;
+  height: 180px;
+  object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 12px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
+.galeria-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* Modal Zoom Foto */
+.modal-foto {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-foto img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 20px; right: 30px;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+/* Formulario Asistencia */
 .alias-card {
   background: #fff;
   border: 1px dashed #c59b27;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-align: left;
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 0.85rem;
   line-height: 1.8;
 }
-/* Tarjeta central elegante sobre el fondo de flores */
-.main-container {
+
+.input-rsvp {
   width: 100%;
-  max-width: 450px;
-  background: rgba(253, 251, 247, 0.95);
-  min-height: 100vh;
-  padding: 25px 18px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
 }
 
-/* Botón Flotante para la Música */
+.btn-wsp {
+  width: 100%;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+/* Botón Flotante Música */
 .btn-musica {
   position: fixed;
   bottom: 20px;
