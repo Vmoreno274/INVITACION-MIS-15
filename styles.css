@@ -4,7 +4,10 @@
   padding: 0;
 }
 
-/* Fondo principal con la imagen fondo2.jpg */
+/* Carga de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap');
+
+/* Fondo con las rosas azules (fondo2.jpg) */
 body {
   font-family: 'Montserrat', sans-serif;
   background-image: url('fondo2.jpg');
@@ -19,12 +22,189 @@ body {
   overflow-x: hidden;
 }
 
-/* Pantalla de bienvenida estilo overlay oscuro */
+/* Velo o filtro transparente oscuro para hacer resaltar las letras y el fondo */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(10, 15, 30, 0.35); /* Ajusta este velo tenue */
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Contenedor Central Transparente con ancho responsivo */
+.main-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px 15px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background: transparent !important;
+}
+
+.seccion {
+  margin-bottom: 35px;
+}
+
+.foto-portada {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+/* Texto flotante en Cursiva con Resplandor Luminoso */
+.frase-texto {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.1rem;
+  color: #ffffff;
+  line-height: 1.35;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 2px 8px rgba(0, 0, 0, 0.9);
+  padding: 0 10px;
+}
+
+.titulo-cursiva, .fecha-cursiva {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.6rem;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7), 0 2px 10px rgba(0, 0, 0, 0.9);
+  margin-bottom: 15px;
+}
+
+/* RELOJ: Bloques Semi-Rectangulares Azules */
+.clock-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  max-width: 320px;
+  margin: 15px auto;
+}
+
+.time-block {
+  background: rgba(15, 25, 45, 0.85);
+  border: 1px solid rgba(80, 140, 255, 0.5);
+  border-radius: 18px;
+  padding: 15px 10px;
+  backdrop-filter: blur(8px);
+  /* Animación de titileo o pulso de luz azul neón */
+  animation: titileoNeo 2s infinite alternate;
+}
+
+/* Efecto de titileo del borde e iluminación azul del contador */
+@keyframes titileoNeo {
+  0% {
+    box-shadow: 0 0 8px rgba(41, 121, 255, 0.4), inset 0 0 5px rgba(41, 121, 255, 0.2);
+    border-color: rgba(65, 130, 245, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 22px rgba(41, 121, 255, 0.9), inset 0 0 12px rgba(41, 121, 255, 0.5);
+    border-color: rgba(100, 180, 255, 0.9);
+  }
+}
+
+.time-block span {
+  display: block;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+}
+
+.time-block small {
+  font-size: 0.75rem;
+  color: #c0d8ff;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* Estilos de Ubicación */
+.direccion-texto {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+}
+
+.btn-ubicacion {
+  display: inline-block;
+  background: linear-gradient(135deg, #2b5876, #4e4376);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* Galería Vertical */
+.galeria-vertical img, .galeria img {
+  width: 100%;
+  border-radius: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* Tarjeta de Alias Mercado Pago */
+.regalos-p {
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.alias-card {
+  background: rgba(15, 25, 45, 0.85);
+  border: 1px solid rgba(80, 140, 255, 0.4);
+  padding: 18px;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(41, 121, 255, 0.3);
+}
+
+/* Botón WhatsApp */
+.btn-wsp {
+  display: inline-block;
+  background: #25d366;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 35px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.5);
+  margin-top: 15px;
+}
+
+/* Botón Flotante de Música */
+.btn-musica {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(212, 175, 55, 0.95);
+  color: #ffffff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Pantalla inicial sobre */
 .overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(5, 10, 25, 0.85);
+  background: rgba(5, 10, 25, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,192 +221,17 @@ body {
 .foto-portada-sobre {
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
   margin-bottom: 20px;
 }
 
 .btn-abrir {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   padding: 12px 28px;
   border-radius: 25px;
   font-weight: bold;
   cursor: pointer;
   font-size: 1rem;
   backdrop-filter: blur(5px);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-}
-
-/* Contenedor central 100% transparente sin fondo blanco */
-.main-container {
-  width: 100%;
-  max-width: 420px;
-  padding: 20px 15px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-  background: transparent !important; /* Elimina cualquier fondo blanco */
-}
-
-.seccion {
-  margin-bottom: 40px;
-}
-
-.foto-portada {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-}
-
-/* Textos blancos legibles con sombra negra profunda */
-.frase-texto {
-  font-family: 'Great Vibes', cursive;
-  font-size: 1.8rem;
-  color: #ffffff;
-  line-height: 1.4;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 10px rgba(0, 0, 0, 0.8);
-}
-
-.titulo-cursiva, .fecha-cursiva {
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
-  color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 12px rgba(0, 0, 0, 0.8);
-  margin-bottom: 15px;
-}
-
-/* Reloj con cajas azul oscuro traslúcidas */
-.clock-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 320px;
-  margin: 0 auto;
-}
-
-.time-block {
-  background: rgba(15, 25, 45, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  padding: 15px 10px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.time-block span {
-  display: block;
-  font-family: 'Great Vibes', cursive;
-  font-size: 2.8rem;
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(255,255,255,0.5);
-}
-
-.time-block small {
-  font-size: 0.75rem;
-  color: #d0e0ff;
-  letter-spacing: 2px;
-}
-
-.direccion-texto {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
-}
-
-/* Botón Ubicación */
-.btn-ubicacion {
-  display: inline-block;
-  background: linear-gradient(135deg, #2b5876, #4e4376);
-  color: #ffffff;
-  text-decoration: none;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-
-/* Galería de Fotos */
-.galeria-vertical img {
-  width: 100%;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
-}
-
-/* Cajas de texto y regalos traslúcidas */
-.regalos-p {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #ffffff;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
-}
-
-.alias-card {
-  background: rgba(15, 25, 45, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-  backdrop-filter: blur(5px);
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-/* Botón WhatsApp */
-.btn-wsp {
-  display: inline-block;
-  background: #25d366;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 14px 35px;
-  border-radius: 30px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-  margin-top: 15px;
-}
-
-/* Botón Flotante Música */
-.btn-musica {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(212, 175, 55, 0.9);
-  color: #ffffff;
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  cursor: pointer;
-  z-index: 1000;
-}
-
-/* Lluvia de Estrellas */
-.estrella {
-  position: fixed;
-  top: -10px;
-  color: #fffdbe;
-  font-size: 12px;
-  pointer-events: none;
-  z-index: 1;
-  animation: caida linear infinite;
-}
-
-@keyframes caida {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0;
-  }
 }
