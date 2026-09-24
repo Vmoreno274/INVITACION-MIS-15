@@ -64,15 +64,17 @@ body {
 }
 
 /* Contenedor central simulando pantalla móvil */
-.main-container {
-  width: 100%;
-  max-width: 450px;
-  /* Fondo con la imagen de flores azules y texto claro */
-  background: url('fondo.jpg') no-repeat center top / cover;
-  color: #ffffff; 
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #333;
+  display: flex;
+  justify-content: center;
   min-height: 100vh;
-  padding: 20px 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.7);
 }
 
 .seccion {
