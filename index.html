@@ -5,31 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis 15 Nicole</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Audio de fondo -->
-  <audio loop id="musica">
+  <!-- Audio -->
+  <audio id="musica" loop preload="auto">
     <source src="musica.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Pantalla de Bienvenida / Sobre -->
-  <div id="overlay" class="overlay">
-    <div class="sobre-box">
-      <h1 class="titulo-sobre">Mis 15 Años</h1>
-      <h2 class="nombre-sobre">Nicole</h2>
-      <button onclick="abrirInvitacion()" class="btn-abrir">✨ Abrir Invitación ✨</button>
-    </div>
-  </div>
+  <!-- Botón Flotante de Música -->
+  <button id="btn-musica" class="btn-music-float" onclick="toggleMusica()">
+    <i id="icon-musica" class="fa-solid fa-music"></i>
+  </button>
 
-  <!-- Contenido Principal -->
   <div class="main-container">
 
-    <!-- Portada Principal -->
+    <!-- Imagen de Portada -->
     <div class="seccion-portada">
-      <img src="imagenprimera.jpg" alt="Nicole" class="foto-portada">
+      <img src="imagenprimera.jpg" alt="Mis 15 Nicole" class="foto-portada">
     </div>
 
     <!-- Frase -->
@@ -37,50 +32,51 @@
       <p>✨ Una noche mágica me espera… y quiero que seas parte, para compartir juntos momentos inolvidables que quedarán para siempre en mi corazón ✨</p>
     </div>
 
-    <!-- Contador en Bloques -->
+    <!-- Contador Regresivo -->
     <div class="seccion contador-seccion">
       <h3>FALTAN:</h3>
       <div id="cuenta-regresiva" class="clock-container">
-        <div class="time-block"><span id="dias">24</span><small>Días</small></div>
-        <div class="time-block"><span id="horas">24</span><small>Hs</small></div>
-        <div class="time-block"><span id="minutos">24</span><small>Min</small></div>
-        <div class="time-block"><span id="segundos">24</span><small>Seg</small></div>
+        <div class="time-block"><span id="dias">00</span><small>Días</small></div>
+        <div class="time-block"><span id="horas">00</span><small>Hs</small></div>
+        <div class="time-block"><span id="minutos">00</span><small>Min</small></div>
+        <div class="time-block"><span id="segundos">00</span><small>Seg</small></div>
       </div>
     </div>
 
     <!-- Fecha y Lugar -->
     <div class="seccion info-evento">
       <div class="icon-box"><i class="fa-regular fa-calendar-check"></i></div>
-      <h2>15 NOVIEMBRE 2026</h2>
-      <p class="hora">22:00 HS</p>
+      <h2 class="fecha-destacada">15 NOVIEMBRE 2026</h2>
+      <p class="hora-destacada">22:00 HS</p>
+      
       <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
       <p class="direccion">Catamarca 2154</p>
       <a href="https://maps.google.com" target="_blank" class="btn-gold">VER UBICACIÓN</a>
     </div>
 
-<!-- Galería de fotos corregida -->
-<div class="seccion galeria">
-  <img src="foto 1.jpeg" alt="Foto 1">
-  <img src="foto 2.jpeg" alt="Foto 2">
-  <img src="foto 3.jpeg" alt="Foto 3">
-</div>
+    <!-- Galería de Fotos Corregida -->
+    <div class="seccion galeria">
+      <img src="foto 1.jpeg" alt="Foto 1">
+      <img src="foto 2.jpeg" alt="Foto 2">
+      <img src="foto 3.jpeg" alt="Foto 3">
+    </div>
 
-    <!-- Datos de Regalos -->
+    <!-- Datos bancarios / Regalos -->
     <div class="seccion regalos-box">
       <div class="icon-box"><i class="fa-solid fa-gift"></i></div>
       <h2>REGALOS</h2>
       <p>El mejor regalo es tu presencia, pero si deseás obsequiarme algo, podés hacerlo a través de mi alias de Mercado Pago 💫</p>
       <div class="alias-card">
-        <p><strong>Alias:</strong> Nicole.mis.15</p>
-        <p><strong>Nombre:</strong> Nicole Aguiar Ot</p>
-        <p><strong>CVU:</strong> ejemplo:0000003100055991041755</p>
+        <p><strong>Alias:</strong> isafernadez.mis.15</p>
+        <p><strong>Nombre:</strong> Isabella Anahí Fernández Millán</p>
+        <p><strong>CVU:</strong> 0000003100055991041781</p>
       </div>
     </div>
 
     <!-- Confirmación RSVP -->
     <div class="seccion rsvp-box">
       <p>✨ Nos encantaría contar con tu presencia ✨</p>
-      <a href="https://wa.me/541156167548?text=Hola%20confirmo%20mi%20asistencia%20a%20los%2015%20de%20Nicole%20✨" target="_blank" class="btn-wsp">
+      <a href="https://wa.me/5492920608922?text=Hola%20confirmo%20mi%20asistencia%20a%20los%2015%20de%20Nicole%20✨" target="_blank" class="btn-wsp">
         <i class="fa-brands fa-whatsapp"></i> CONFIRMAR ASISTENCIA
       </a>
     </div>
