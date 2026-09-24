@@ -33,13 +33,14 @@ body::before {
 }
 
 /* Contenedor central con ESPACIADO ESPACIOSO entre secciones */
+/* Contenedor principal que queda por encima de la lluvia de estrellas */
 .main-container {
   width: 100%;
-  max-width: 440px;
-  padding: 30px 18px 120px 18px;
+  max-width: 430px;
+  padding: 30px 18px 80px 18px;
   text-align: center;
   position: relative;
-  z-index: 2;
+  z-index: 10; /* Queda por delante de las estrellas */
   background: transparent !important;
 }
 
@@ -210,12 +211,15 @@ body::before {
 }
 
 /* Lluvia de estrellas doradas y brillantes por TODO el ancho */
+/* Lluvia de estrellas detras del contenido */
 #estrellas-container {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  top: 0; 
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
   pointer-events: none;
-  z-index: 3;
+  z-index: 1; /* Se coloca detrás del texto y fotos */
   overflow: hidden;
 }
 
