@@ -7,34 +7,38 @@ function abrirInvitacion() {
   
   var audio = document.getElementById("musica");
   if (audio) {
-    audio.play().catch(function(error) {
-      console.log("El navegador requiere interacción previa.");
+    audio.play().then(() => {
+      console.log("Música iniciada correctamente.");
+    }).catch(function(error) {
+      console.log("Error al reproducir audio: ", error);
     });
   }
 }
 
 function toggleMusica() {
   var audio = document.getElementById("musica");
-  if (audio.paused) {
-    audio.play();
-  } else {
-    audio.pause();
+  if (audio) {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
   }
 }
 
-/* Lluvia de estrellas repartida al 100% del ancho */
+/* Lluvia de Estrellas Doradas Grandes */
 function crearEstrellas() {
   const container = document.getElementById('estrellas-container');
   if (!container) return;
 
-  for (let i = 0; i < 35; i++) {
+  for (let i = 0; i < 40; i++) {
     const estrella = document.createElement('div');
     estrella.className = 'estrella';
     estrella.innerText = '✨';
     estrella.style.left = Math.random() * 98 + 'vw';
-    estrella.style.animationDuration = (Math.random() * 3 + 2.5) + 's';
+    estrella.style.animationDuration = (Math.random() * 3 + 2) + 's';
     estrella.style.animationDelay = (Math.random() * 5) + 's';
-    estrella.style.fontSize = (Math.random() * 10 + 10) + 'px';
+    estrella.style.fontSize = (Math.random() * 14 + 18) + 'px'; // Estrellas más grandes (18px a 32px)
     container.appendChild(estrella);
   }
 }
