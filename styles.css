@@ -11,266 +11,180 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #333;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* Pantalla de inicio con sobre traslúcido y rosas de fondo */
+/* Pantalla de inicio sobre el fondo de rosas */
 .overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(10, 15, 30, 0.85);
-  background-image: url('Nicole.jpg');
-  background-size: cover;
-  background-position: center;
+  background: rgba(5, 10, 25, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .sobre-box {
   text-align: center;
-  background: rgba(255, 255, 255, 0.92);
-  padding: 40px 25px;
-  border-radius: 20px;
-  border: 2px solid #c59b27;
-  max-width: 85%;
+  max-width: 90%;
   width: 380px;
-  box-shadow: 0 0 30px rgba(197, 155, 39, 0.4);
 }
 
-.subtitulo-sobre {
-  font-family: 'Cinzel', serif;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  color: #777;
-}
-
-.titulo-sobre {
-  font-family: 'Cinzel', serif;
-  font-size: 1.5rem;
-  color: #333;
-  margin-top: 5px;
-}
-
-.nombre-sobre {
-  font-family: 'Great Vibes', cursive;
-  font-size: 4rem;
-  color: #c59b27;
-  margin: 10px 0 20px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+.foto-portada-sobre {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
 }
 
 .btn-abrir {
-  background: linear-gradient(135deg, #d4af37, #aa7c11);
-  color: #fff;
-  border: none;
-  padding: 14px 28px;
-  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 12px 28px;
+  border-radius: 25px;
   font-weight: bold;
   cursor: pointer;
-  font-size: 0.95rem;
-  letter-spacing: 1px;
-  box-shadow: 0 4px 15px rgba(197, 155, 39, 0.4);
+  font-size: 1rem;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
-/* Tarjeta Central */
+/* Contenedor central 100% transparente sin tarjeta blanca */
 .main-container {
   width: 100%;
-  max-width: 450px;
-  background: rgba(253, 251, 247, 0.96);
-  min-height: 100vh;
-  padding: 25px 18px;
-  box-shadow: 0 0 35px rgba(0, 0, 0, 0.6);
+  max-width: 420px;
+  padding: 20px 15px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .seccion {
-  margin-bottom: 35px;
-  text-align: center;
+  margin-bottom: 40px;
 }
 
 .foto-portada {
   width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 }
 
+/* Textos flotantes en Cursiva */
 .frase-texto {
-  font-style: italic;
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.6;
-  padding: 0 10px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: #ffffff;
+  line-height: 1.4;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
-.gold-title {
-  font-family: 'Cinzel', serif;
-  color: #c59b27;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
+.titulo-cursiva, .fecha-cursiva {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+  margin-bottom: 15px;
 }
 
-/* Reloj */
+/* Reloj estilo Cajas Oscuras Traslúcidas */
 .clock-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
 .time-block {
-  background: #ffffff;
-  border: 1px solid #e2d1a6;
-  border-radius: 10px;
-  padding: 10px;
-  min-width: 68px;
-  box-shadow: 0 4px 10px rgba(197, 155, 39, 0.15);
+  background: rgba(15, 25, 45, 0.65);
+  border: 1px solid rgba(100, 150, 255, 0.3);
+  border-radius: 15px;
+  padding: 15px 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .time-block span {
   display: block;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
 .time-block small {
-  font-size: 0.7rem;
-  color: #888;
-  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #d0e0ff;
+  letter-spacing: 2px;
 }
 
-/* Círculos con íconos */
-.icon-circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: #fbf6eb;
-  border: 1px solid #c59b27;
-  color: #c59b27;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.4rem;
-  margin: 0 auto 10px;
-}
-
-.fecha-title {
-  font-family: 'Cinzel', serif;
-  font-size: 1.4rem;
-  color: #222;
-}
-
-.hora-text {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-.direccion-text {
-  font-size: 1.1rem;
+.direccion-texto {
+  font-size: 1.3rem;
   font-weight: 600;
-  color: #444;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
 }
 
-.btn-gold {
+/* Botón Ubicación */
+.btn-ubicacion {
   display: inline-block;
-  background: linear-gradient(135deg, #d4af37, #aa7c11);
-  color: #fff;
+  background: #3a7bd5;
+  background: linear-gradient(to right, #3a7bd5, #3a6073);
+  color: #ffffff;
   text-decoration: none;
-  padding: 10px 24px;
-  border-radius: 20px;
-  font-size: 0.85rem;
+  padding: 12px 30px;
+  border-radius: 25px;
   font-weight: bold;
-  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* Galería Grid */
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.galeria-grid img {
+/* Galería Vertical Redondeada */
+.galeria-vertical img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
-.galeria-grid img:hover {
-  transform: scale(1.03);
+/* Caja Alias Mercado Pago Traslúcida */
+.regalos-p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
 }
 
-/* Modal Zoom Foto */
-.modal-foto {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
-  z-index: 10000;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-foto img {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 10px;
-}
-
-.cerrar-modal {
-  position: absolute;
-  top: 20px; right: 30px;
-  color: #fff;
-  font-size: 2.5rem;
-  cursor: pointer;
-}
-
-/* Formulario Asistencia */
 .alias-card {
-  background: #fff;
-  border: 1px dashed #c59b27;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: left;
-  margin-top: 12px;
-  font-size: 0.85rem;
+  background: rgba(15, 25, 45, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  font-size: 0.95rem;
   line-height: 1.8;
 }
 
-.input-rsvp {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border: 1px solid #dcdcdc;
-  border-radius: 8px;
-  font-family: inherit;
-  font-size: 0.9rem;
-}
-
+/* Botón WhatsApp Verde */
 .btn-wsp {
-  width: 100%;
+  display: inline-block;
   background: #25d366;
-  color: #fff;
-  border: none;
-  padding: 14px;
-  border-radius: 25px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 35px;
+  border-radius: 30px;
   font-weight: bold;
-  font-size: 0.95rem;
-  margin-top: 12px;
-  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+  margin-top: 15px;
 }
 
 /* Botón Flotante Música */
@@ -278,17 +192,36 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #c59b27;
+  background: rgba(212, 175, 55, 0.85);
   color: #ffffff;
   border: none;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  font-size: 1.3rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
   cursor: pointer;
   z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+/* Lluvia de Estrellas */
+.estrella {
+  position: fixed;
+  top: -10px;
+  color: #fffdbe;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 1;
+  animation: caida linear infinite;
+}
+
+@keyframes caida {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
 }
