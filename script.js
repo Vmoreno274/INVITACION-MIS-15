@@ -1,19 +1,30 @@
-function abrirInvitacion() {
-  document.getElementById("overlay").style.opacity = "0";
-  setTimeout(() => {
-    document.getElementById("overlay").style.display = "none";
-  }, 800);
-  
-  var audio = document.getElementById("musica");
-  if (audio) {
-    audio.play().catch(function(error) {
-      console.log("Auto-play prevenido por el navegador.");
-    });
+// Control de Música con botón flotante
+var reproduciendo = false;
+var audio = document.getElementById("musica");
+var icon = document.getElementById("icon-musica");
+
+function toggleMusica() {
+  if (reproduciendo) {
+    audio.pause();
+    icon.className = "fa-solid fa-music";
+  } else {
+    audio.play();
+    icon.className = "fa-solid fa-pause";
   }
+  reproduciendo = !reproduciendo;
 }
-// La fecha se configura así: (Año, Mes-1, Día, Hora, Minutos, Segundos)
-// En JavaScript Noviembre es el mes 10 (porque se cuenta desde 0=Enero hasta 11=Diciembre).
-// Año 2026, Mes 10 (Noviembre), Día 15, Hora 22, Minutos 0
+
+// Intentar reproducir al primer toque del usuario en la pantalla
+document.body.addEventListener('click', function() {
+  if (!reproduciendo && audio) {
+    audio.play().then(() => {
+      reproduciendo = true;
+      icon.className = "fa-solid fa-pause";
+    }).catch(e => console.log("Esperando toque del usuario."));
+  }
+}, { once: true });
+
+// Contador para el 15 de Noviembre de 2026 a las 22:00 HS
 const fechaEvento = new Date(2026, 10, 15, 22, 0, 0).getTime();
 
 setInterval(function() {
