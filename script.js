@@ -1,22 +1,33 @@
-// Define la fecha del evento (Año, Mes-1, Día, Hora, Minutos)
-// Nota: En Javascript los meses van de 0 (Enero) a 11 (Diciembre).
-const fechaEvento = new Date(2026, 4, 16, 21, 0, 0).getTime();
+function abrirInvitacion() {
+  document.getElementById("overlay").style.opacity = "0";
+  setTimeout(() => {
+    document.getElementById("overlay").style.display = "none";
+  }, 800);
+  
+  var audio = document.getElementById("musica");
+  if (audio) {
+    audio.play().catch(function(error) {
+      console.log("Auto-play prevenido por el navegador.");
+    });
+  }
+}
+// La fecha se configura así: (Año, Mes-1, Día, Hora, Minutos, Segundos)
+// En JavaScript Noviembre es el mes 10 (porque se cuenta desde 0=Enero hasta 11=Diciembre).
+const fechaEvento = new Date(2026, 10, 15, 21, 0, 0).getTime();
 
-const timer = setInterval(function() {
+setInterval(function() {
   const ahora = new Date().getTime();
   const diferencia = fechaEvento - ahora;
 
-  if (diferencia < 0) {
-    clearInterval(timer);
-    document.getElementById("cuenta-regresiva").innerHTML = "¡Llegó el día!";
-    return;
+  if (diferencia > 0) {
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+    document.getElementById("dias").innerText = dias < 10 ? '0' + dias : dias;
+    document.getElementById("horas").innerText = horas < 10 ? '0' + horas : horas;
+    document.getElementById("minutos").innerText = minutos < 10 ? '0' + minutos : minutos;
+    document.getElementById("segundos").innerText = segundos < 10 ? '0' + segundos : segundos;
   }
-
-  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-  const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
-  document.getElementById("cuenta-regresiva").innerHTML = 
-    `${dias}d : ${horas}h : ${minutos}m : ${segundos}s`;
 }, 1000);
