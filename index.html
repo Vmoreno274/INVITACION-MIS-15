@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis 15 Nicole</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,78 +14,67 @@
     <source src="musica.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- Pantalla de Bienvenida / Sobre Estilo Cortina -->
+  <!-- Contenedor para la lluvia de estrellas -->
+  <div id="estrellas-container"></div>
+
+  <!-- Pantalla de Bienvenida / Cortina -->
   <div id="overlay" class="overlay">
     <div class="sobre-box">
-      <p class="subtitulo-sobre">TE INVITAMOS A CELEBRAR LOS</p>
-      <h1 class="titulo-sobre">15 Años</h1>
-      <h2 class="nombre-sobre">Nicole</h2>
-      <button onclick="abrirInvitacion()" class="btn-abrir">✨ ABRIR INVITACIÓN ✨</button>
+      <img src="imagenprimera.jpg" alt="Mis 15 Nicole" class="foto-portada-sobre">
+      <button onclick="abrirInvitacion()" class="btn-abrir">✨ Toca para ingresar ✨</button>
     </div>
   </div>
 
-  <!-- Contenedor Principal -->
+  <!-- Contenido Principal Transparente -->
   <div class="main-container">
 
-    <!-- Tarjeta de Portada -->
+    <!-- Imagen Principal Decorativa -->
     <div class="seccion-portada">
-      <img src="imagenprimera.jpg" alt="Nicole" class="foto-portada">
+      <img src="imagenprimera.jpg" alt="Mis 15 Nicole" class="foto-portada">
     </div>
 
-    <!-- Frase Destacada -->
+    <!-- Frase en Cursiva -->
     <div class="seccion frase-box">
-      <p class="frase-texto">✨ Una noche mágica me espera… y quiero que seas parte, para compartir juntos momentos inolvidables que quedarán para siempre en mi corazón ✨</p>
+      <p class="frase-texto">✨ Una noche mágica me espera... y quiero que seas parte, para compartir juntos momentos inolvidables que quedarán para siempre en mi corazón ✨</p>
     </div>
 
-    <!-- Contador en Bloques Dorados -->
+    <!-- Contador en Cajas Oscuras Traslúcidas -->
     <div class="seccion contador-seccion">
-      <h3 class="gold-title">FALTAN:</h3>
+      <h3 class="titulo-cursiva">Faltan:</h3>
       <div id="cuenta-regresiva" class="clock-container">
-        <div class="time-block"><span id="dias">00</span><small>Días</small></div>
-        <div class="time-block"><span id="horas">00</span><small>Hs</small></div>
-        <div class="time-block"><span id="minutos">00</span><small>Min</small></div>
-        <div class="time-block"><span id="segundos">00</span><small>Seg</small></div>
+        <div class="time-block"><span id="dias">00</span><small>DÍAS</small></div>
+        <div class="time-block"><span id="horas">00</span><small>HORAS</small></div>
+        <div class="time-block"><span id="minutos">00</span><small>MINUTOS</small></div>
+        <div class="time-block"><span id="segundos">00</span><small>SEGUNDOS</small></div>
       </div>
     </div>
 
-    <!-- Fecha y Lugar -->
+    <!-- Fecha y Hora -->
     <div class="seccion info-evento">
-      <div class="icon-circle"><i class="fa-regular fa-calendar-check"></i></div>
-      <h2 class="fecha-title">15 NOVIEMBRE 2026</h2>
-      <p class="hora-text">21:00 HS</p>
-      
-      <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
-      <p class="direccion-text">Catamarca 1540</p>
-      <a href="https://www.google.com/maps/place/Catamarca+1540,+C1246+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/" target="_blank" class="btn-gold">VER UBICACIÓN</a>
+      <h2 class="fecha-cursiva">✨ 15 Noviembre 2026 - 21:00 hs ✨</h2>
+      <p class="direccion-texto">Catamarca 1540</p>
+      <a href="https://www.google.com/maps/place/Catamarca+1540,+C1246+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/" target="_blank" class="btn-ubicacion">Ver ubicación</a>
     </div>
 
-    <!-- Galería Interactiva con Zoom -->
+    <!-- Galería Vertical con Borde Redondeado -->
     <div class="seccion galeria">
-      <h3 class="gold-title">GALERÍA</h3>
-      <div class="galeria-grid">
-        <img src="foto 1.jpg" alt="Foto 1" onclick="ampliarImagen(this.src)">
-        <img src="foto 2.jpg" alt="Foto 2" onclick="ampliarImagen(this.src)">
-        <img src="foto 3.jpg" alt="Foto 3" onclick="ampliarImagen(this.src)">
-        <img src="foto 4.jpg" alt="Foto 4" onclick="ampliarImagen(this.src)">
-        <img src="foto 5.jpg" alt="Foto 5" onclick="ampliarImagen(this.src)">
-        <img src="foto 6.jpg" alt="Foto 6" onclick="ampliarImagen(this.src)">
-        <img src="foto 7.jpg" alt="Foto 7" onclick="ampliarImagen(this.src)">
-        <img src="foto 8.jpg" alt="Foto 8" onclick="ampliarImagen(this.src)">
-        <img src="foto 9.jpg" alt="Foto 9" onclick="ampliarImagen(this.src)">
-        <img src="foto 10.jpg" alt="Foto 10" onclick="ampliarImagen(this.src)">
+      <div class="galeria-vertical">
+        <img src="foto 1.jpg" alt="Foto 1">
+        <img src="foto 2.jpg" alt="Foto 2">
+        <img src="foto 3.jpg" alt="Foto 3">
+        <img src="foto 4.jpg" alt="Foto 4">
+        <img src="foto 5.jpg" alt="Foto 5">
+        <img src="foto 6.jpg" alt="Foto 6">
+        <img src="foto 7.jpg" alt="Foto 7">
+        <img src="foto 8.jpg" alt="Foto 8">
+        <img src="foto 9.jpg" alt="Foto 9">
+        <img src="foto 10.jpg" alt="Foto 10">
       </div>
     </div>
 
-    <!-- Modal para ver foto ampliada -->
-    <div id="modal-foto" class="modal-foto" onclick="cerrarModal()">
-      <span class="cerrar-modal">&times;</span>
-      <img id="img-modal-src" src="" alt="Foto Ampliada">
-    </div>
-
-    <!-- Datos de Regalos -->
+    <!-- Regalos -->
     <div class="seccion regalos-box">
-      <div class="icon-circle"><i class="fa-solid fa-gift"></i></div>
-      <h2 class="gold-title">REGALOS</h2>
+      <h2 class="titulo-cursiva">🎁 Regalos</h2>
       <p class="regalos-p">El mejor regalo es tu presencia, pero si deseás obsequiarme algo, podés hacerlo a través de mi alias de Mercado Pago 💫</p>
       <div class="alias-card">
         <p><strong>Alias:</strong> Nicole.aguiar.mis.15</p>
@@ -95,28 +83,19 @@
       </div>
     </div>
 
-    <!-- Confirmación RSVP con Nombre y Acompañantes -->
+    <!-- Confirmar Asistencia -->
     <div class="seccion rsvp-box">
-      <div class="icon-circle"><i class="fa-brands fa-whatsapp"></i></div>
-      <h2 class="gold-title">CONFIRMACIÓN</h2>
-      <p>✨ Nos encantaría contar con tu presencia ✨</p>
-      <div class="rsvp-form">
-        <input type="text" id="nombre-asistente" placeholder="Tu Nombre y Apellido" class="input-rsvp">
-        <select id="asistencia-opcion" class="input-rsvp">
-          <option value="Confirmo mi asistencia">Sí, asistiré</option>
-          <option value="Lamentablemente no podré asistir">No podré asistir</option>
-        </select>
-        <button onclick="enviarWhatsApp()" class="btn-wsp">
-          CONFIRMAR POR WHATSAPP
-        </button>
-      </div>
+      <p class="frase-texto">✨ Nos encantaría contar con tu presencia ✨</p>
+      <a href="https://wa.me/541156167548?text=Hola%20confirmo%20mi%20asistencia%20a%20los%2015%20de%20Nicole%20✨" target="_blank" class="btn-wsp">
+        Confirmar asistencia
+      </a>
     </div>
 
   </div>
 
   <!-- Botón Flotante de Música -->
   <button onclick="toggleMusica()" class="btn-musica">
-    <i id="icono-musica" class="fa-solid fa-music"></i>
+    <i id="icono-musica" class="fa-solid fa-music">🎵</i>
   </button>
 
   <script src="script.js"></script>
