@@ -1,0 +1,22 @@
+// Define la fecha del evento (Año, Mes-1, Día, Hora, Minutos)
+// Nota: En Javascript los meses van de 0 (Enero) a 11 (Diciembre).
+const fechaEvento = new Date(2026, 4, 16, 21, 0, 0).getTime();
+
+const timer = setInterval(function() {
+  const ahora = new Date().getTime();
+  const diferencia = fechaEvento - ahora;
+
+  if (diferencia < 0) {
+    clearInterval(timer);
+    document.getElementById("cuenta-regresiva").innerHTML = "¡Llegó el día!";
+    return;
+  }
+
+  const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+  document.getElementById("cuenta-regresiva").innerHTML = 
+    `${dias}d : ${horas}h : ${minutos}m : ${segundos}s`;
+}, 1000);

@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fcf8f6;
+  color: #4a4a4a;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.seccion {
+  margin-bottom: 35px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.img-portada {
+  width: 100%;
+  border-radius: 12px;
+}
+
+h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  color: #b8860b; /* Tono dorado */
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+/* Reloj digital */
+.clock {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #b8860b;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+}
+
+/* Galería de Fotos */
+.galeria img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.datos-alias {
+  text-align: left;
+  background: #fdfaf6;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
