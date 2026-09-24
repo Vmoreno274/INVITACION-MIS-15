@@ -1,65 +1,280 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mis 15 Nicole</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación 15 - Isabella</title>
 
-  <!-- Música de fondo -->
-  <audio loop id="musica" preload="auto">
-    <source src="musica.mp3" type="audio/mpeg">
-  </audio>
+<!-- Fuente elegante -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  /* texto regalos */
+.texto-regalo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  color: #e0e7ff;
+  line-height: 1.6;
+}
 
-  <!-- Lluvia de Estrellas -->
-  <div id="estrellas-container"></div>
-
-  <!-- Pantalla de Bienvenida -->
+    <!-- Pantalla de Bienvenida -->
   <div id="overlay" class="overlay">
     <div class="sobre-box">
       <img src="imagenprimera.jpg" alt="Mis 15 Nicole" class="foto-portada-sobre">
       <button onclick="abrirInvitacion()" class="btn-abrir">✨ ingresar ✨</button>
     </div>
   </div>
+  
+/* texto confirmación */
+.texto-confirmacion {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: #cfd8ff;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+  .frase-confirmacion {
+  font-size: 25px;
+  color: #cfd8ff;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.portada img {
+  width: 90%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255,255,255,0.3);
+  animation: aparecer 2s ease;
+}
 
-  <!-- Contenido Principal -->
-  <div class="main-container">
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+  /* ===== CONTADOR ===== */
+.contador {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
 
-    <!-- Portada Principal -->
-    <div class="seccion-portada">
-      <img src="imagenprimera.jpg" alt="Mis 15 Nicole" class="foto-portada">
-    </div>
+.tiempo-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 12px 15px;
+  min-width: 80px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px #1e3a8a, 0 0 30px #1e40af inset;
+  text-align: center;
+  animation: brilloBox 2s infinite;
+}
 
-    <!-- Frase Principal -->
-    <div class="seccion frase-box">
-      <p class="frase-texto"><span class="estrella-inline">✦</span> Una noche mágica me espera... y quiero que seas parte, para compartir juntos momentos inolvidables que quedarán para siempre en mi corazón <span class="estrella-inline">✦</span></p>
-    </div>
+.tiempo-box span {
+  display: block;
+  font-size: 35px;
+  font-weight: bold;
+  font-family: 'Great Vibes', cursive;
+  margin-bottom: 5px;
+  color: #fff;
+}
 
-    <!-- Contador con Espacio Holgado -->
-    <div class="seccion contador-seccion">
-      <h3 class="titulo-faltan">Faltan:</h3>
-      <div id="cuenta-regresiva" class="clock-container">
-        <div class="time-block"><span id="dias">00</span><small>DÍAS</small></div>
-        <div class="time-block"><span id="horas">00</span><small>HORAS</small></div>
-        <div class="time-block"><span id="minutos">00</span><small>MINUTOS</small></div>
-        <div class="time-block"><span id="segundos">00</span><small>SEGUNDOS</small></div>
-      </div>
-    </div>
+.tiempo-box p {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #cfd8ff;
+  font-weight: bold;
+}
 
-    <!-- Fecha y Hora -->
-    <div class="seccion info-evento">
-      <h2 class="fecha-linea"><span class="estrella-inline">✦</span> 15 Noviembre 2026 - 21:00 hs <span class="estrella-inline">✦</span></h2>
-      <p class="direccion-texto">Catamarca 1540</p>
-      <a href="https://www.google.com/maps/place/Catamarca+1540,+C1246+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/" target="_blank" class="btn-ubicacion">Ver ubicación</a>
-    </div>
+@keyframes brilloBox {
+  0% { box-shadow: 0 0 10px #1e3a8a; }
+  50% { box-shadow: 0 0 25px #3b82f6; }
+  100% { box-shadow: 0 0 10px #1e3a8a; }
+}
+  
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background: 
+    linear-gradient(rgba(10,20,50,0.7), rgba(10,20,50,0.7)),
+    url("fondo2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
+}
 
-    <!-- Galería Vertical -->
-    <div class="seccion galeria">
-      <div class="galeria-vertical">
+/* títulos elegantes */
+h1, h2 {
+  font-family: 'Great Vibes', cursive;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+/* cielo */
+.cielo{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+}
+
+.estrella{
+position:absolute;
+font-size:30px;
+animation: caer linear forwards;
+}
+
+@keyframes caer{
+0%{transform:translateY(-10px);opacity:1;}
+100%{transform:translateY(100vh);opacity:0;}
+}
+
+/* corona */
+.corona{
+font-size:130px;
+margin-top:40px;
+animation: flotar 3s ease-in-out infinite, brillo 2s infinite;
+}
+
+@keyframes flotar{
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
+}
+
+@keyframes brillo{
+0%{filter: drop-shadow(0 0 5px #cfd8ff);}
+50%{filter: drop-shadow(0 0 25px #ffffff);}
+100%{filter: drop-shadow(0 0 5px #cfd8ff);}
+}
+
+/* secciones */
+.section{
+padding:80px 40px;
+}
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+.fade.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+.btn {
+  background: linear-gradient(135deg, #ffffff, #cfd8ff);
+  color: #0a1f44;
+  padding: 14px 28px;
+  border-radius: 40px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* efecto hover */
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 25px rgba(255,255,255,0.6);
+}
+
+/* efecto brillo animado */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
+  transition: 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+  .btn-ubicacion {
+  background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+  color: white;
+}
+  .btn-regalo {
+  background: linear-gradient(135deg, #ec4899, #be185d);
+  color: white;
+}
+  .btn-confirmar {
+  background: linear-gradient(135deg, #22c55e, #166534);
+  color: white;
+}
+
+img{
+width:80%;
+border-radius:20px;
+margin-top:20px;
+}
+
+</style>
+  
+</head>
+
+<body>
+
+<!-- MÚSICA -->
+<audio id="musica" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="cielo"></div>
+
+<div class="portada">
+  <img src="imagenprimera.jpg" alt="Mis 15 Nicole">
+</div>
+
+<div class="section">
+  <h2>✨Una noche mágica me espera… y quiero que seas parte, para compartir juntos momentos inolvidables que quedarán para siempre en mi corazón✨</h2>
+</div>
+
+<div class="section fade">
+  <h2>Faltan:</h2>
+  <div id="contador" class="contador"></div>
+</div>
+
+<div class="section fade">
+  <h2> 15 Noviembre 2026 - 21:00 hs</h2>
+  <h3>Catamarca 1540</h3>
+
+  <a class="btn btn-ubicacion" href="https://www.google.com/maps/place/Catamarca+1540,+C1246+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.6280964,-58.4048353,17z/data=!3m1!4b1!4m6!3m5!1s0x95bccb1c771a4bbf:0x97a075f8cc40fa1d!8m2!3d-34.6281008!4d-58.402255!16s%2Fg%2F11cpnz_938?entry=ttu&g_ep=EgoyMDI2MDkyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+  Ver ubicación 
+  </a>
+</div>
+
+<div class="section fade">
         <img src="foto 1.jpg" alt="Foto 1">
         <img src="foto 2.jpg" alt="Foto 2">
         <img src="foto 3.jpg" alt="Foto 3">
@@ -70,35 +285,106 @@
         <img src="foto 8.jpg" alt="Foto 8">
         <img src="foto 9.jpg" alt="Foto 9">
         <img src="foto 10.jpg" alt="Foto 10">
-      </div>
+</div>
+  
+<div class="section fade">
+  <h2>🎁 Regalos</h2>
+
+<p class="texto-regalo">
+  El mejor regalo es tu presencia, pero si deseás obsequiarme algo, podés hacerlo a través de mi alias de Mercado Pago 💫
+</p>
+  <p><strong>Alias:</strong> Nicole.aguiar.mis.15</p>
+   <p><strong>Nombre:</strong> Nicole-Aguiar-Ot</p>
+ <p><strong>CVU:</strong> 0000003100055991041744</p>
+
+</div>
+  
+<div class="section fade">
+   <p class="texto-confirmacion">
+  ✨ Nos encantaría contar con tu presencia ✨ <br>
+</p>
+ <a class="btn btn-confirmar" 
+href="https://wa.me/541156167548?text=Hola%20confirmo%20mi%20asistencia%20a%20los%2015%20de%20Isabella%20✨" 
+target="_blank">
+  Confirmar asistencia
+</a>
+</div>
+
+<script>
+
+// música
+const musica = document.getElementById("musica");
+musica.volume = 0.3;
+
+document.addEventListener("click", () => {
+  musica.play();
+}, { once: true });
+
+// estrellas
+function crearEstrella(){
+  const estrella = document.createElement("div");
+  estrella.classList.add("estrella");
+  estrella.innerHTML="✨";
+
+  estrella.style.left = Math.random()*100+"vw";
+  estrella.style.animationDuration = (Math.random()*3+2)+"s";
+
+  document.querySelector(".cielo").appendChild(estrella);
+
+  setTimeout(()=>estrella.remove(),5000);
+}
+
+setInterval(crearEstrella,300);
+
+// contador
+const fechaEvento = new Date("Nov 15, 2026 21:00:00").getTime();
+const contenedor = document.getElementById("contador");
+
+setInterval(() => {
+  const ahora = new Date().getTime();
+  const distancia = fechaEvento - ahora;
+
+  const dias = Math.floor(distancia / (1000*60*60*24));
+  const horas = Math.floor((distancia % (1000*60*60*24)) / (1000*60*60));
+  const minutos = Math.floor((distancia % (1000*60*60)) / (1000*60));
+  const segundos = Math.floor((distancia % (1000*60)) / 1000);
+
+  contenedor.innerHTML = `
+    <div class="tiempo-box">
+      <span>${dias}</span>
+      <p>DÍAS</p>
     </div>
 
-    <!-- Regalos -->
-    <div class="seccion regalos-box">
-      <h2 class="titulo-cursiva">🎁 Regalos</h2>
-      <p class="regalos-p">El mejor regalo es tu presencia, pero si deseás obsequiarme algo, podés hacerlo a través de mi alias de Mercado Pago 💫</p>
-      <div class="alias-card">
-        <p><strong>Alias:</strong> Nicole.aguiar.mis.15</p>
-        <p><strong>Nombre:</strong> Nicole-Aguiar-Ot</p>
-        <p><strong>CVU:</strong> 0000003100055991041744</p>
-      </div>
+    <div class="tiempo-box">
+      <span>${horas.toString().padStart(2, '0')}</span>
+      <p>HORAS</p>
     </div>
 
-    <!-- Confirmación RSVP -->
-    <div class="seccion rsvp-box">
-      <p class="frase-texto"><span class="estrella-inline">✦</span> Nos encantaría contar con tu presencia <span class="estrella-inline">✦</span></p>
-      <a href="https://wa.me/541156167548?text=Hola%20confirmo%20mi%20asistencia%20a%20los%2015%20de%20Nicole%20✨" target="_blank" class="btn-wsp">
-        Confirmar asistencia
-      </a>
+    <div class="tiempo-box">
+      <span>${minutos.toString().padStart(2, '0')}</span>
+      <p>MINUTOS</p>
     </div>
 
-  </div>
+    <div class="tiempo-box">
+      <span>${segundos.toString().padStart(2, '0')}</span>
+      <p>SEGUNDOS</p>
+    </div>
+  `;
+}, 1000);
 
-  <!-- Botón Flotante Música -->
-  <button onclick="toggleMusica()" class="btn-musica">
-    <i id="icono-musica" class="fa-solid fa-music"></i>
-  </button>
+// animación scroll
+const elementos = document.querySelectorAll(".fade");
 
-  <script src="script.js"></script>
+window.addEventListener("scroll", () => {
+  elementos.forEach(el => {
+    const pos = el.getBoundingClientRect().top;
+    if (pos < window.innerHeight - 100) {
+      el.classList.add("visible");
+    }
+  });
+});
+
+</script>
+
 </body>
 </html>
