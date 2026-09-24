@@ -6,39 +6,71 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #030813;
-  color: #ffffff;
+  background-color: #0f0f0f;
+  background-image: radial-gradient(#262626 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: #333;
   display: flex;
   justify-content: center;
   min-height: 100vh;
 }
 
-/* Botón flotante de música */
-.btn-music-float {
+/* Pantalla de inicio de la invitación */
+.overlay {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  background: #d4af37;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  font-size: 1.3rem;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(10, 10, 10, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 9999;
-  cursor: pointer;
+  transition: opacity 0.8s ease;
 }
 
-/* Contenedor Principal con Fondo de Flores */
+.sobre-box {
+  text-align: center;
+  background: #ffffff;
+  padding: 40px 25px;
+  border-radius: 15px;
+  border: 2px solid #c59b27;
+  max-width: 85%;
+  box-shadow: 0 0 25px rgba(197, 155, 39, 0.3);
+}
+
+.titulo-sobre {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  color: #666;
+}
+
+.nombre-sobre {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  color: #c59b27;
+  margin: 10px 0 20px;
+}
+
+.btn-abrir {
+  background: #c59b27;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Contenedor central simulando pantalla móvil */
 .main-container {
   width: 100%;
   max-width: 450px;
-  background: #061024 url('Nicole.jpg') no-repeat center top / cover;
-  background-attachment: fixed;
+  background: #fdfbf7;
   min-height: 100vh;
-  padding: 25px 18px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.8);
+  padding: 20px 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .seccion {
@@ -48,24 +80,22 @@ body {
 
 .foto-portada {
   width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .frase-box p {
   font-style: italic;
   font-size: 0.95rem;
-  color: #e0e6ed;
+  color: #555;
   line-height: 1.6;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
-/* Contador en Bloques */
+/* Estilo del contador en bloques */
 .contador-seccion h3 {
   font-family: 'Cinzel', serif;
-  color: #f3e5ab;
+  color: #c59b27;
   margin-bottom: 15px;
-  letter-spacing: 2px;
 }
 
 .clock-container {
@@ -75,63 +105,52 @@ body {
 }
 
 .time-block {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid #d4af37;
-  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e2d1a6;
+  border-radius: 8px;
   padding: 10px;
   min-width: 65px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
 }
 
 .time-block span {
   display: block;
   font-size: 1.4rem;
   font-weight: bold;
-  color: #111;
+  color: #333;
 }
 
 .time-block small {
   font-size: 0.7rem;
-  color: #555;
-  font-weight: 600;
+  color: #888;
   text-transform: uppercase;
 }
 
-/* Textos e Iconos Dorados legibles */
+/* Botones e Iconos */
 .icon-box {
-  font-size: 2rem;
-  color: #f3e5ab;
+  font-size: 1.8rem;
+  color: #c59b27;
   margin-bottom: 8px;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
 }
 
-.fecha-destacada {
+h2 {
   font-family: 'Cinzel', serif;
-  color: #ffffff;
-  font-size: 1.6rem;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+  color: #222;
+  font-size: 1.3rem;
   margin-bottom: 5px;
-}
-
-.hora-destacada, .direccion {
-  font-size: 1.1rem;
-  color: #f3e5ab;
-  font-weight: 600;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.9);
-  margin-bottom: 12px;
 }
 
 .btn-gold {
   display: inline-block;
-  background: linear-gradient(135deg, #d4af37, #aa820a);
+  margin-top: 12px;
+  background: #c59b27;
   color: #fff;
   text-decoration: none;
-  padding: 12px 25px;
-  border-radius: 22px;
-  font-size: 0.9rem;
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-size: 0.85rem;
   font-weight: bold;
   letter-spacing: 1px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 .btn-wsp {
@@ -139,31 +158,25 @@ body {
   background: #25d366;
   color: #fff;
   text-decoration: none;
-  padding: 14px 28px;
+  padding: 12px 25px;
   border-radius: 25px;
   font-weight: bold;
-  font-size: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  margin-top: 10px;
 }
 
-/* Galería */
 .galeria img {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  border-radius: 10px;
+  margin-bottom: 12px;
 }
 
-/* Caja de datos con fondo sólido legible */
 .alias-card {
-  background: rgba(255, 255, 255, 0.95);
-  color: #222;
-  border: 2px dashed #d4af37;
-  padding: 18px;
-  border-radius: 12px;
+  background: #fff;
+  border: 1px dashed #c59b27;
+  padding: 15px;
+  border-radius: 8px;
   text-align: left;
-  margin-top: 15px;
-  font-size: 0.9rem;
+  margin-top: 10px;
+  font-size: 0.85rem;
   line-height: 1.8;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
