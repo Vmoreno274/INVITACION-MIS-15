@@ -385,6 +385,20 @@ window.addEventListener("scroll", () => {
 });
 
 </script>
+function abrirInvitacion() {
+  const overlay = document.getElementById("overlay");
+  overlay.style.opacity = "0";
+  setTimeout(() => {
+    overlay.style.display = "none";
+  }, 800);
 
+  const musica = document.getElementById("musica");
+  if (musica) {
+    musica.volume = 0.5;
+    musica.play().catch(error => {
+      console.log("Error al reproducir audio:", error);
+    });
+  }
+}
 </body>
 </html>
