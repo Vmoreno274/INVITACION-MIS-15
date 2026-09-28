@@ -18,21 +18,6 @@ function abrirInvitacion() {
   }
 }
 
-function toggleMusica() {
-  var audio = document.getElementById("musica");
-  var icono = document.getElementById("icono-musica");
-
-  if (audio) {
-    if (audio.paused) {
-      audio.play();
-      if (icono) icono.className = "fa-solid fa-pause";
-    } else {
-      audio.pause();
-      if (icono) icono.className = "fa-solid fa-music";
-    }
-  }
-}
-
 /* Lluvia de Estrellas Doradas Grandes */
 function crearEstrellas() {
   const container = document.getElementById('estrellas-container');
